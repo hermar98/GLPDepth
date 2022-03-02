@@ -1,5 +1,4 @@
 *.zip
-*.sh
 ckpt/
 logs/
 results/
