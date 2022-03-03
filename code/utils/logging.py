@@ -6,8 +6,10 @@ import numpy as np
 
 import torch
 
-_, term_width = os.popen('stty size', 'r').read().split()
-term_width = int(term_width)
+# Set term width manually to avoid error
+# _, term_width = os.popen('stty size', 'r').read().split()
+# term_width = int(term_width)
+term_width = 203
 
 TOTAL_BAR_LENGTH = 30.
 last_time = time.time()
