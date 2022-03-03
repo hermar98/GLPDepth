@@ -25,6 +25,14 @@ def main():
     args = opt.initialize().parse_args()
     print(args)
 
+    # Print GPU model
+    for i in range(torch.cuda.device_count()):
+        gpu_name = ""
+        new_gpu_name = torch.cuda.get_device_name(i)
+        if gpu_name is not new_gpu_name:
+            print("GPU model:", new_gpu_name)
+            gpu_name = new_gpu_name
+
     # Logging
     exp_name = '%s_%s' % (datetime.now().strftime('%m%d'), args.exp_name)
     log_dir = os.path.join(args.log_dir, args.dataset, exp_name)

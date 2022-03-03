@@ -3,3 +3,4 @@ ckpt/
 logs/
 results/
 __pycache__/
+code/models/weights
