@@ -2,16 +2,17 @@ import torch
 import torch.nn as nn
 
 from mmcv.runner import load_checkpoint
-from models.mit import mit_b4
+from models.mit import mit_b1, mit_b4
 
 class GLPDepth(nn.Module):
     def __init__(self, max_depth=10.0, is_train=False):
         super().__init__()
         self.max_depth = max_depth
 
-        self.encoder = mit_b4()
+        self.encoder = mit_b1()
         if is_train:            
-            ckpt_path = './code/models/weights/mit_b4.pth'
+            #ckpt_path = './code/models/weights/mit_b4.pth'
+            ckpt_path = './code/models/weights/mit_b1.pth'
             try:
                 load_checkpoint(self.encoder, ckpt_path, logger=None)
             except:
